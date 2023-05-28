@@ -10,14 +10,14 @@ function createPromise(position, delay) {
       if (shouldResolve) {
         resolve({position, delay});
       } else {
-        reject({position, delay} );
+        reject({position, delay});
         
       }
     }, delay);
   });
 
 }
-
+ let array=[] ;
 const form = document.querySelector('form');
 form.addEventListener('submit', createPromisesAll);
 
@@ -32,22 +32,25 @@ function createPromisesAll(event) {
   const amount = +form.amount.value;
   const delays = [delay];
   
-  for(let i=1;i<amount;i+=1){
-    delay+=step;
-    delays.push(delay);
-  }
-  
-    delays.map((delay,index)=>{
-      createPromise(index + 1, delay).then(({ position, delay }) => {
+  for (let i = 0; i < amount; i += 1) {
+   
+      delay += step;
+      delays.push(delay);
+        
+      createPromise(i, delays[i]).then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         //  console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-      }).catch(({ position, delay }) => {
-        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-        // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-      });
-    });
-  }
-
+      
+      })
+        .catch(({ position, delay }) => {
+          Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+          // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        });
+    }
+     
+    
+    
+}
 
     
   
