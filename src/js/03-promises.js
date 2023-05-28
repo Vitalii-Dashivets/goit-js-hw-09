@@ -17,7 +17,7 @@ function createPromise(position, delay) {
   });
 
 }
- let array=[] ;
+ 
 const form = document.querySelector('form');
 form.addEventListener('submit', createPromisesAll);
 
