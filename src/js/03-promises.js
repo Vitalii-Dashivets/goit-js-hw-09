@@ -26,7 +26,7 @@ form.addEventListener('submit', createPromisesAll);
 
 function createPromisesAll(event) {
   event.preventDefault();
-   
+  console.clear();
   let delay = +form.delay.value;
   const step = +form.step.value;
   const amount = +form.amount.value;

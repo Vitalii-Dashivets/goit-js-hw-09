@@ -29,7 +29,6 @@ const startBtn = document.querySelector('[data-start]');
 const timerFrame = document.querySelector('.timer');
 const timerField = document.querySelectorAll('.field');
 const timerLabel = document.querySelectorAll('.label');
-console.log(timerFrame);
 
 startBtn.setAttribute('disabled', '');
 
@@ -43,7 +42,7 @@ const seconds = document.querySelector('[data-seconds]');
 timerFrame.style.display = 'flex';
 timerFrame.style.justifyContent = 'space-around';
 timerFrame.style.marginTop = '150px';
-// timerFrame.style.fontSize = '100px';
+
 timerFrame.style.fontWeight = '600';
 timerFrame.style.color = 'blue';
 timerFrame.style.border = '10px solid blue';
@@ -79,7 +78,7 @@ const timer = {
         return;
     } else {
         let timeSet = this.fullTimer;
-        console.log(timeSet);
+       
         const timerId = setInterval(() => {
             timeSet -= 1000;
             startBtn.setAttribute('disabled', '');
@@ -115,7 +114,7 @@ const options = {
   minuteIncrement: 1,
     
     onClose(selectedDates) {
-        console.log(selectedDates[0]);
+        
         if (timer.isActive) {
 
             return;
