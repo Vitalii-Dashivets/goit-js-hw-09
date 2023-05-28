@@ -8,9 +8,9 @@ function createPromise(position, delay) {
 
     setTimeout(() => {
       if (shouldResolve) {
-        resolve({position, delay},Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`));
+        resolve({position, delay});
       } else {
-        reject({position, delay},  Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`));
+        reject({position, delay} );
         
       }
     }, delay);
@@ -38,10 +38,12 @@ function createPromisesAll(event) {
   }
   
     delays.map((delay,index)=>{
-      createPromise(index+1,delay).then(({ position, delay }) => {
-        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-      }).catch(({position, delay}) => {
-        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      createPromise(index + 1, delay).then(({ position, delay }) => {
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        //  console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      }).catch(({ position, delay }) => {
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });
     });
   }
