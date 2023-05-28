@@ -43,7 +43,7 @@ const seconds = document.querySelector('[data-seconds]');
 timerFrame.style.display = 'flex';
 timerFrame.style.justifyContent = 'space-around';
 timerFrame.style.marginTop = '150px';
-timerFrame.style.fontSize = '100px';
+// timerFrame.style.fontSize = '100px';
 timerFrame.style.fontWeight = '600';
 timerFrame.style.color = 'blue';
 timerFrame.style.border = '10px solid blue';
@@ -54,6 +54,7 @@ for (let i = 0; i < timerField.length;i+=1){
     timerField[i].style.display = 'flex';
     timerField[i].style.flexDirection = 'column';
     timerField[i].style.alignItems = 'center';
+    timerField[i].style.fontSize = '100px';
     timerLabel[i].style.fontSize = '30px';
 }
  
