@@ -37,7 +37,7 @@ function createPromisesAll(event) {
       delay += step;
       delays.push(delay);
         
-      createPromise(i, delays[i]).then(({ position, delay }) => {
+      createPromise(i+1, delays[i]).then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         //  console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
       
