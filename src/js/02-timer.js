@@ -83,11 +83,8 @@ const timer = {
             timeSet -= 1000;
             startBtn.setAttribute('disabled', '');
             const timerObj = convertMs(timeSet);
-
-            days.textContent = `${timerObj.days}`.padStart(2, '0');
-            hours.textContent =  `${timerObj.hours}`.padStart(2, '0');
-            minutes.textContent = `${timerObj.minutes}`.padStart(2, '0');
-            seconds.textContent = `${timerObj.seconds}`.padStart(2, '0');
+            addLeadingZero(timerObj);
+            
 
             this.getRandomHexColor();   
             seconds.style.color= this.getRandomHexColor();                
@@ -104,7 +101,12 @@ const timer = {
 
 };
 
-
+function addLeadingZero(object ){
+            days.textContent = `${object.days}`.padStart(2, '0');
+            hours.textContent =  `${object.hours}`.padStart(2, '0');
+            minutes.textContent = `${object.minutes}`.padStart(2, '0');
+            seconds.textContent = `${object.seconds}`.padStart(2, '0');
+}
 
 const options = {
   enableTime: true,
@@ -128,11 +130,11 @@ const options = {
             startBtn.removeAttribute('disabled', '');
             timer.fullTimer = timer.selectedDatesUnix - currentDateUnix;
             const timerObj = convertMs(timer.fullTimer);
-            
-            days.textContent = `${timerObj.days}`.padStart(2, '0');
-            hours.textContent =  `${timerObj.hours}`.padStart(2, '0');
-            minutes.textContent = `${timerObj.minutes}`.padStart(2, '0');
-            seconds.textContent = `${timerObj.seconds}`.padStart(2, '0');
+            addLeadingZero( timerObj  );
+            // days.textContent = `${timerObj.days}`.padStart(2, '0');
+            // hours.textContent =  `${timerObj.hours}`.padStart(2, '0');
+            // minutes.textContent = `${timerObj.minutes}`.padStart(2, '0');
+            // seconds.textContent = `${timerObj.seconds}`.padStart(2, '0');
                              
 
         } else {
