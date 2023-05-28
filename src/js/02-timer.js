@@ -50,7 +50,7 @@ timerFrame.style.border = '10px solid blue';
 timerFrame.style.borderRadius = '50px';
 timerFrame.style.backgroundColor = 'yellow';
 
-for (i = 0; i < timerField.length;i+=1){
+for (let i = 0; i < timerField.length;i+=1){
     timerField[i].style.display = 'flex';
     timerField[i].style.flexDirection = 'column';
     timerField[i].style.alignItems = 'center';
