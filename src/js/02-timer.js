@@ -9,8 +9,10 @@ Notify.init({
     width: '500px',
     fontSize: '25px',
     position: 'center-top',
-    timeout: '5000',
+    timeout: '3000',
     messageMaxLength: 150,
+    distance: '20px',
+    showOnlyTheLastOne: true,
     warning: {
 background: 'rgba(190, 194, 79, 1)',
 textColor: '#fff',
@@ -72,7 +74,7 @@ const timer = {
     
          if (timer.selectedDatesUnix < currentDateUnix) {
         Notify.warning('Please choose a date in the future');
-        
+           
         return;
     } else {
         let timeSet = this.fullTimer;
